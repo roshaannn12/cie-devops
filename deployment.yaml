@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cie-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cie-web
+  template:
+    metadata:
+      labels:
+        app: cie-web
+    spec:
+      containers:
+        - name: web
+          image: cie-devops-app:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
