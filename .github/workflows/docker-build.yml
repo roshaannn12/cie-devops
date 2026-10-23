@@ -33,3 +33,14 @@ jobs:
           tags: |
             roshaannn12/cie-devops-app:latest
             roshaannn12/cie-devops-app:${{ github.sha }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: [self-hosted, Windows, X64]
+    steps:
+      - name: Deploy image to Kubernetes
+        shell: powershell
+        run: |
+          kubectl config use-context docker-desktop
+          kubectl set image deployment/cie-web web=roshaannn12/cie-devops-app:${{ github.sha }}
+          kubectl rollout status deployment/cie-web --timeout=180s
