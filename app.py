@@ -19,7 +19,7 @@ PAGE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TaskFlow - CI/CD | DevOps Dashboard</title>
+<title>TaskFlow | DevOps Dashboard</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#172033;
 font-family:Inter,"Segoe UI",Arial,sans-serif}.layout{display:flex;min-height:100vh}
